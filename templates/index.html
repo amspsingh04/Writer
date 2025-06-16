@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code to Research Report</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Upload Your Code to Generate a Research-Style Report</h1>
+
+    <form action="/generate-report" method="post" enctype="multipart/form-data">
+      <input type="file" name="files" multiple required>
+      <button type="submit">Generate Report</button>
+    </form>
+
+    {% if report %}
+      <h2>📄 Generated Report</h2>
+      <div class="report-box">
+        <pre>{{ report }}</pre>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
